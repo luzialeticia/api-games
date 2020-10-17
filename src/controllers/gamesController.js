@@ -17,10 +17,23 @@ const updateGamePut = (req, res) => {
   const game = games.find(game => game.id == id)
 
   res.status(200).send(game)
-  console.log(games);
+}
+
+const updateGamePatch = (req, res) => {
+  const gameToUpdate = req.body
+  const id = parseInt(req.params.id)
+
+  const game = games.find(game => game.id == id)
+  
+  Object.keys(gameToUpdate).forEach((key)=>{
+        game[key] = gameToUpdate[key]
+  })
+
+    res.status(200).send(game)
 }
 
 module.exports = {
     getAllGames,
-    updateGamePut
+    updateGamePut,
+    updateGamePatch
 }
