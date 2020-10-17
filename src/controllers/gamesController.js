@@ -14,7 +14,7 @@ const updateGame = (req, res) => {
   const gameUpdated = { id, ...gameToUpdate }
   games.splice(updateId, 1, gameUpdated)
 
-  const game = games.find((game, index) => game.id == id)
+  const game = games.find(game => game.id == id)
 
   res.status(200).send(game)
   console.log(games);
