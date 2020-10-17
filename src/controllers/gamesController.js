@@ -4,7 +4,7 @@ const getAllGames = (req, res) =>{
     res.status(200).json(games)
 }
 
-const updateGame = (req, res) => {
+const updateGamePut = (req, res) => {
   const gameToUpdate = req.body
   const id = parseInt(req.params.id)
 
@@ -22,5 +22,5 @@ const updateGame = (req, res) => {
 
 module.exports = {
     getAllGames,
-    updateGame
+    updateGamePut
 }
